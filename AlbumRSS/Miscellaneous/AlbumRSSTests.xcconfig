@@ -1,0 +1,20 @@
+//
+//  AlbumRSSTests.xcconfig
+//  AlbumRSS
+//
+//  Created by Iurii Skoliar on 8/6/20.
+//  Copyright © 2020 Iurii Skoliar. All rights reserved.
+//
+
+// Default Settings
+BUNDLE_LOADER = $(TEST_HOST)
+CODE_SIGN_STYLE = Automatic
+INFOPLIST_FILE = $(MISCELLANEOUS_DIR)/$(TARGET_NAME).plist
+IPHONEOS_DEPLOYMENT_TARGET = 13.6
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/Frameworks
+PRODUCT_BUNDLE_IDENTIFIER = $(PROJECT_BUNDLE_IDENTIFIER)Tests
+PRODUCT_NAME = $(PROJECT_NAME)Tests
+SWIFT_VERSION = 5.0
+TARGETED_DEVICE_FAMILY = 1,2
+TEST_HOST = $(BUILT_PRODUCTS_DIR)/$(PROJECT_NAME).app/$(PROJECT_NAME)
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES

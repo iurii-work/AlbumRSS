@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		417E39F224DC918A00FE8B37 /* AlbumTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCA1CC24DC8A4A006D4018 /* AlbumTableViewController.swift */; };
+		417E39F324DC918A00FE8B37 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCA1CD24DC8A4A006D4018 /* AlbumViewController.swift */; };
+		417E39F424DC918A00FE8B37 /* ApplicationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCA1CF24DC8A4A006D4018 /* ApplicationDelegate.swift */; };
+		417E39F524DC918A00FE8B37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCA1D024DC8A4A006D4018 /* SceneDelegate.swift */; };
+		417E39F624DC918A00FE8B37 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCA1CB24DC8A4A006D4018 /* Album.swift */; };
+		417E39F724DC918A00FE8B37 /* ArtworkCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCA1CE24DC8A4A006D4018 /* ArtworkCache.swift */; };
+		417E39F824DC918A00FE8B37 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCA1CA24DC8A4A006D4018 /* AlbumCell.swift */; };
+		417E39F924DC918D00FE8B37 /* AlbumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41CCA1D124DC8A4A006D4018 /* AlbumTests.swift */; };
+		417E39FB24DC940300FE8B37 /* explicit.json in Resources */ = {isa = PBXBuildFile; fileRef = 417E39FA24DC940300FE8B37 /* explicit.json */; };
+		41CCA1D224DC8A56006D4018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41CCA1C324DC8A4A006D4018 /* Assets.xcassets */; };
+		41CCA1D324DC8A59006D4018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41CCA1C424DC8A4A006D4018 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		41CCA1A824DC88E9006D4018 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41CCA18924DC88E4006D4018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41CCA19024DC88E5006D4018;
+			remoteInfo = AlbumRSS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		417E39FA24DC940300FE8B37 /* explicit.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = explicit.json; sourceTree = "<group>"; };
+		41CCA19124DC88E5006D4018 /* AlbumRSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumRSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41CCA1A724DC88E9006D4018 /* AlbumRSSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbumRSSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41CCA1C324DC8A4A006D4018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		41CCA1C524DC8A4A006D4018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		41CCA1CA24DC8A4A006D4018 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		41CCA1CB24DC8A4A006D4018 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		41CCA1CC24DC8A4A006D4018 /* AlbumTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewController.swift; sourceTree = "<group>"; };
+		41CCA1CD24DC8A4A006D4018 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		41CCA1CE24DC8A4A006D4018 /* ArtworkCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtworkCache.swift; sourceTree = "<group>"; };
+		41CCA1CF24DC8A4A006D4018 /* ApplicationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationDelegate.swift; sourceTree = "<group>"; };
+		41CCA1D024DC8A4A006D4018 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		41CCA1D124DC8A4A006D4018 /* AlbumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTests.swift; sourceTree = "<group>"; };
+		41CCA1E324DC8DC8006D4018 /* AlbumRSSTests.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AlbumRSSTests.xcconfig; sourceTree = "<group>"; };
+		41CCA1E424DC8DC8006D4018 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		41CCA1E524DC8DC8006D4018 /* AlbumRSSTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AlbumRSSTests.plist; sourceTree = "<group>"; };
+		41CCA1E624DC8DC8006D4018 /* AlbumRSS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AlbumRSS.plist; sourceTree = "<group>"; };
+		41CCA1E724DC8DC8006D4018 /* Test.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
+		41CCA1E824DC8DC8006D4018 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		41CCA1E924DC8DC9006D4018 /* Base.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
+		41CCA1EA24DC8DC9006D4018 /* AlbumRSS.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = AlbumRSS.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41CCA18E24DC88E5006D4018 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41CCA1A424DC88E9006D4018 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		417E39FC24DC940800FE8B37 /* AlbumRSS */ = {
+			isa = PBXGroup;
+			children = (
+				41CCA1C324DC8A4A006D4018 /* Assets.xcassets */,
+				41CCA1C424DC8A4A006D4018 /* LaunchScreen.storyboard */,
+			);
+			name = AlbumRSS;
+			sourceTree = "<group>";
+		};
+		417E39FD24DC940E00FE8B37 /* AlbumRSSTests */ = {
+			isa = PBXGroup;
+			children = (
+				417E39FA24DC940300FE8B37 /* explicit.json */,
+			);
+			name = AlbumRSSTests;
+			sourceTree = "<group>";
+		};
+		41CCA18824DC88E4006D4018 = {
+			isa = PBXGroup;
+			children = (
+				41CCA1C624DC8A4A006D4018 /* Miscellaneous */,
+				41CCA19224DC88E5006D4018 /* Products */,
+				41CCA1C224DC8A4A006D4018 /* Resources */,
+				41CCA1C924DC8A4A006D4018 /* Sources */,
+			);
+			sourceTree = "<group>";
+		};
+		41CCA19224DC88E5006D4018 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				41CCA19124DC88E5006D4018 /* AlbumRSS.app */,
+				41CCA1A724DC88E9006D4018 /* AlbumRSSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		41CCA1C224DC8A4A006D4018 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				417E39FC24DC940800FE8B37 /* AlbumRSS */,
+				417E39FD24DC940E00FE8B37 /* AlbumRSSTests */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		41CCA1C624DC8A4A006D4018 /* Miscellaneous */ = {
+			isa = PBXGroup;
+			children = (
+				41CCA1E624DC8DC8006D4018 /* AlbumRSS.plist */,
+				41CCA1EA24DC8DC9006D4018 /* AlbumRSS.xcconfig */,
+				41CCA1E524DC8DC8006D4018 /* AlbumRSSTests.plist */,
+				41CCA1E324DC8DC8006D4018 /* AlbumRSSTests.xcconfig */,
+				41CCA1E924DC8DC9006D4018 /* Base.xcconfig */,
+				41CCA1E424DC8DC8006D4018 /* Debug.xcconfig */,
+				41CCA1E824DC8DC8006D4018 /* Release.xcconfig */,
+				41CCA1E724DC8DC8006D4018 /* Test.xcconfig */,
+			);
+			path = Miscellaneous;
+			sourceTree = "<group>";
+		};
+		41CCA1C924DC8A4A006D4018 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				41CCA1D424DC8A6B006D4018 /* AlbumRSS */,
+				41CCA1D524DC8A6E006D4018 /* AlbumRSSTests */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		41CCA1D424DC8A6B006D4018 /* AlbumRSS */ = {
+			isa = PBXGroup;
+			children = (
+				41CCA1D624DC8A7A006D4018 /* Controllers */,
+				41CCA1D724DC8A84006D4018 /* Model */,
+				41CCA1D824DC8AB0006D4018 /* Views */,
+			);
+			name = AlbumRSS;
+			sourceTree = "<group>";
+		};
+		41CCA1D524DC8A6E006D4018 /* AlbumRSSTests */ = {
+			isa = PBXGroup;
+			children = (
+				41CCA1D924DC8AC3006D4018 /* Model */,
+			);
+			name = AlbumRSSTests;
+			sourceTree = "<group>";
+		};
+		41CCA1D624DC8A7A006D4018 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				41CCA1CC24DC8A4A006D4018 /* AlbumTableViewController.swift */,
+				41CCA1CD24DC8A4A006D4018 /* AlbumViewController.swift */,
+				41CCA1CF24DC8A4A006D4018 /* ApplicationDelegate.swift */,
+				41CCA1D024DC8A4A006D4018 /* SceneDelegate.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		41CCA1D724DC8A84006D4018 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41CCA1CB24DC8A4A006D4018 /* Album.swift */,
+				41CCA1CE24DC8A4A006D4018 /* ArtworkCache.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		41CCA1D824DC8AB0006D4018 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				41CCA1CA24DC8A4A006D4018 /* AlbumCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		41CCA1D924DC8AC3006D4018 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41CCA1D124DC8A4A006D4018 /* AlbumTests.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		41CCA19024DC88E5006D4018 /* AlbumRSS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41CCA1B024DC88E9006D4018 /* Build configuration list for PBXNativeTarget "AlbumRSS" */;
+			buildPhases = (
+				41CCA18D24DC88E5006D4018 /* Sources */,
+				41CCA18E24DC88E5006D4018 /* Frameworks */,
+				41CCA18F24DC88E5006D4018 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlbumRSS;
+			productName = AlbumRSS;
+			productReference = 41CCA19124DC88E5006D4018 /* AlbumRSS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		41CCA1A624DC88E9006D4018 /* AlbumRSSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41CCA1B324DC88E9006D4018 /* Build configuration list for PBXNativeTarget "AlbumRSSTests" */;
+			buildPhases = (
+				41CCA1A324DC88E9006D4018 /* Sources */,
+				41CCA1A424DC88E9006D4018 /* Frameworks */,
+				41CCA1A524DC88E9006D4018 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41CCA1A924DC88E9006D4018 /* PBXTargetDependency */,
+			);
+			name = AlbumRSSTests;
+			productName = AlbumRSSTests;
+			productReference = 41CCA1A724DC88E9006D4018 /* AlbumRSSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		41CCA18924DC88E4006D4018 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Iurii Skoliar";
+				TargetAttributes = {
+					41CCA19024DC88E5006D4018 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					41CCA1A624DC88E9006D4018 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 41CCA19024DC88E5006D4018;
+					};
+				};
+			};
+			buildConfigurationList = 41CCA18C24DC88E4006D4018 /* Build configuration list for PBXProject "AlbumRSS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 41CCA18824DC88E4006D4018;
+			productRefGroup = 41CCA19224DC88E5006D4018 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				41CCA19024DC88E5006D4018 /* AlbumRSS */,
+				41CCA1A624DC88E9006D4018 /* AlbumRSSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		41CCA18F24DC88E5006D4018 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41CCA1D224DC8A56006D4018 /* Assets.xcassets in Resources */,
+				41CCA1D324DC8A59006D4018 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41CCA1A524DC88E9006D4018 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				417E39FB24DC940300FE8B37 /* explicit.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		41CCA18D24DC88E5006D4018 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				417E39F624DC918A00FE8B37 /* Album.swift in Sources */,
+				417E39F824DC918A00FE8B37 /* AlbumCell.swift in Sources */,
+				417E39F224DC918A00FE8B37 /* AlbumTableViewController.swift in Sources */,
+				417E39F324DC918A00FE8B37 /* AlbumViewController.swift in Sources */,
+				417E39F424DC918A00FE8B37 /* ApplicationDelegate.swift in Sources */,
+				417E39F724DC918A00FE8B37 /* ArtworkCache.swift in Sources */,
+				417E39F524DC918A00FE8B37 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41CCA1A324DC88E9006D4018 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				417E39F924DC918D00FE8B37 /* AlbumTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		41CCA1A924DC88E9006D4018 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41CCA19024DC88E5006D4018 /* AlbumRSS */;
+			targetProxy = 41CCA1A824DC88E9006D4018 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		41CCA1C424DC8A4A006D4018 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41CCA1C524DC8A4A006D4018 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		41CCA1AE24DC88E9006D4018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41CCA1E424DC8DC8006D4018 /* Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		41CCA1AF24DC88E9006D4018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41CCA1E824DC8DC8006D4018 /* Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		41CCA1B124DC88E9006D4018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41CCA1EA24DC8DC9006D4018 /* AlbumRSS.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		41CCA1B224DC88E9006D4018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41CCA1EA24DC8DC9006D4018 /* AlbumRSS.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		41CCA1B424DC88E9006D4018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41CCA1E324DC8DC8006D4018 /* AlbumRSSTests.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		41CCA1B524DC88E9006D4018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41CCA1E324DC8DC8006D4018 /* AlbumRSSTests.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		41CCA1DA24DC8D75006D4018 /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41CCA1E724DC8DC8006D4018 /* Test.xcconfig */;
+			buildSettings = {
+			};
+			name = Test;
+		};
+		41CCA1DB24DC8D75006D4018 /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41CCA1EA24DC8DC9006D4018 /* AlbumRSS.xcconfig */;
+			buildSettings = {
+			};
+			name = Test;
+		};
+		41CCA1DC24DC8D75006D4018 /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41CCA1E324DC8DC8006D4018 /* AlbumRSSTests.xcconfig */;
+			buildSettings = {
+			};
+			name = Test;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		41CCA18C24DC88E4006D4018 /* Build configuration list for PBXProject "AlbumRSS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41CCA1AE24DC88E9006D4018 /* Debug */,
+				41CCA1DA24DC8D75006D4018 /* Test */,
+				41CCA1AF24DC88E9006D4018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41CCA1B024DC88E9006D4018 /* Build configuration list for PBXNativeTarget "AlbumRSS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41CCA1B124DC88E9006D4018 /* Debug */,
+				41CCA1DB24DC8D75006D4018 /* Test */,
+				41CCA1B224DC88E9006D4018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41CCA1B324DC88E9006D4018 /* Build configuration list for PBXNativeTarget "AlbumRSSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41CCA1B424DC88E9006D4018 /* Debug */,
+				41CCA1DC24DC8D75006D4018 /* Test */,
+				41CCA1B524DC88E9006D4018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 41CCA18924DC88E4006D4018 /* Project object */;
+}

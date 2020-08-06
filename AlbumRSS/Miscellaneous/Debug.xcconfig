@@ -1,0 +1,19 @@
+//
+//  Debug.xcconfig
+//  AlbumRSS
+//
+//  Created by Iurii Skoliar on 8/6/20.
+//  Copyright © 2020 Iurii Skoliar. All rights reserved.
+//
+
+#include "Base.xcconfig"
+
+// Default Settings
+DEBUG_INFORMATION_FORMAT = dwarf
+GCC_DYNAMIC_NO_PIC = NO
+GCC_OPTIMIZATION_LEVEL = 0
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) DEBUG=1
+MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE
+ONLY_ACTIVE_ARCH = YES
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG
+SWIFT_OPTIMIZATION_LEVEL = -Onone
