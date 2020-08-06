@@ -26,7 +26,6 @@ class AlbumTests: XCTestCase {
 		XCTAssertNotNil(album.artist)
 		XCTAssertNotNil(album.artworkURL)
 		XCTAssertNotNil(album.copyright)
-		XCTAssertNotNil(album.genre)
 		let genres = album.genres
 		XCTAssertEqual(genres.count, 2)
 		XCTAssertNotNil(genres[0].name)
