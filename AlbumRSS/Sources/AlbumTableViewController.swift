@@ -30,9 +30,10 @@ class AlbumTableViewController: UITableViewController {
 }
 
 extension AlbumTableViewController {
-	func present(error: Error, retryHandler: @escaping () -> Void) {
+	func present(error: Error, completionHandler: @escaping (Bool) -> Void) {
 		let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-		alertController.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in retryHandler() }))
+		alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in completionHandler(false) }))
+		alertController.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in completionHandler(true) }))
 		self.present(alertController, animated: true, completion: nil)
 	}
 
@@ -53,7 +54,15 @@ extension AlbumTableViewController {
 				return data
 			})
 			.catch { (error) -> Just<Data?> in
-				DispatchQueue.main.async { self.present(error: error) { self.reloadAlbums(self) } }
+				DispatchQueue.main.async {
+					self.present(error: error) { (retry) in
+						if retry {
+							self.reloadAlbums(self)
+						} else {
+							self.refreshControl?.endRefreshing()
+						}
+					}
+				}
 				return Just(nil)
 			}
 			.compactMap { (data) -> Data? in data }
@@ -61,7 +70,13 @@ extension AlbumTableViewController {
 			.compactMap { (albumRSS) -> AlbumRSS? in albumRSS }
 			.receive(on: RunLoop.main)
 			.catch { (error) -> Just<AlbumRSS?> in
-				self.present(error: error) { self.reloadAlbums(self) }
+				self.present(error: error) { (retry) in
+					if retry {
+						self.reloadAlbums(self)
+					} else {
+						self.refreshControl?.endRefreshing()
+					}
+				}
 				return Just(nil)
 			}
 			.compactMap { (albumRSS) -> AlbumRSS? in albumRSS }
