@@ -13,6 +13,16 @@ class AlbumViewController: UIViewController {
 	private let album: Album
 	private var cancellable: AnyCancellable?
 
+	private let activityIndicatorView: UIActivityIndicatorView = {
+		let result = UIActivityIndicatorView()
+		result.isHidden = true
+		result.style = .large
+		result.translatesAutoresizingMaskIntoConstraints = false
+		result.setContentHuggingPriority(.defaultLow, for: .horizontal)
+		result.setContentHuggingPriority(.defaultLow, for: .vertical)
+		return result
+	}()
+
 	private let albumLabel: UILabel = {
 		let result = UILabel()
 		result.lineBreakMode = .byWordWrapping
@@ -100,9 +110,17 @@ class AlbumViewController: UIViewController {
 		if let artwork = ArtworkCache.shared.artwork(for: artworkURL) {
 			artworkView.image = artwork
 		} else {
+			let activityIndicatorView = self.activityIndicatorView
+			activityIndicatorView.startAnimating()
+			activityIndicatorView.isHidden = false
 			self.cancellable = ArtworkCache.shared.artworkPublisher(for: artworkURL)
 				.receive(on: RunLoop.main)
-				.assign(to: \UIImageView.image, on: artworkView)
+				.sink(receiveCompletion: { _ in
+					activityIndicatorView.isHidden = true
+					activityIndicatorView.stopAnimating()
+				}, receiveValue: { image in
+					artworkView.image = image
+				})
 		}
 		self.albumLabel.text = album.name.uppercased()
 		self.artistLabel.text = album.artist
@@ -121,9 +139,18 @@ class AlbumViewController: UIViewController {
 	}
 
 	override func loadView() {
+		// Artwork View
+		let artworkView = self.artworkView
+		let activityIndicatorView = self.activityIndicatorView
+		artworkView.addSubview(activityIndicatorView)
+		activityIndicatorView.leadingAnchor.constraint(equalTo: artworkView.leadingAnchor).isActive = true
+		activityIndicatorView.topAnchor.constraint(equalTo: artworkView.topAnchor).isActive = true
+		activityIndicatorView.trailingAnchor.constraint(equalTo: artworkView.trailingAnchor).isActive = true
+		activityIndicatorView.bottomAnchor.constraint(equalTo: artworkView.bottomAnchor).isActive = true
+
 		// Stack View
 		let stackView = self.stackView
-		stackView.addArrangedSubview(self.artworkView)
+		stackView.addArrangedSubview(artworkView)
 		stackView.addArrangedSubview(self.albumLabel)
 		stackView.addArrangedSubview(self.artistLabel)
 		stackView.addArrangedSubview(self.genreLabel)
