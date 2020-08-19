@@ -105,6 +105,7 @@ class AlbumViewController: UIViewController {
 		}
 		self.albumLabel.text = album.name.uppercased()
 		self.artistLabel.text = album.artist
+		self.button.isEnabled = UIApplication.shared.canOpenURL(album.location)
 		self.genreLabel.text = album.genres.map({ $0.name }).joined(separator: "/")
 		if let copyright = album.copyright {
 			self.copyrightLabel.text = copyright
