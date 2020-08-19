@@ -22,6 +22,12 @@ class AlbumTableViewController: UITableViewController {
 }
 
 extension AlbumTableViewController {
+	func present(error: Error, retryHandler: @escaping () -> Void) {
+		let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+		alertController.addAction(UIAlertAction(title: "Retry", style: .default, handler: { _ in retryHandler() }))
+		self.present(alertController, animated: true, completion: nil)
+	}
+
 	func reloadAlbums() {
 		let albumRSSURL = URL(string: "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json")!
 		let decoder = JSONDecoder()
@@ -38,13 +44,19 @@ extension AlbumTableViewController {
 
 				return data
 			})
-			.catch { _ in Just(nil) }
+			.catch { (error) -> Just<Data?> in
+				DispatchQueue.main.async { self.present(error: error) { self.reloadAlbums() } }
+				return Just(nil)
+			}
 			.compactMap { (data) -> Data? in data }
 			.decode(type: AlbumRSS.self, decoder: decoder)
 			.compactMap { (albumRSS) -> AlbumRSS? in albumRSS }
-			.catch { _ in Just(nil) }
-			.compactMap { (albumRSS) -> AlbumRSS? in albumRSS }
 			.receive(on: RunLoop.main)
+			.catch { (error) -> Just<AlbumRSS?> in
+				self.present(error: error) { self.reloadAlbums() }
+				return Just(nil)
+			}
+			.compactMap { (albumRSS) -> AlbumRSS? in albumRSS }
 			.sink { (albumRSS) in
 				let feed = albumRSS.feed
 				self.title = feed.title
