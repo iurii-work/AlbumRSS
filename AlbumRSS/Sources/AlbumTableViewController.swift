@@ -16,7 +16,6 @@ class AlbumTableViewController: UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		self.tableView.register(AlbumCell.self, forCellReuseIdentifier: String(describing: AlbumCell.self))
 		self.reloadAlbums()
 	}
 }
@@ -79,10 +78,14 @@ extension AlbumTableViewController {
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: AlbumCell.self), for: indexPath)
-		if let albumCell = cell as? AlbumCell, let album = self.albums?[indexPath.row] {
+		let identifier = String(describing: AlbumCell.self)
+		var albumCell: AlbumCell! = tableView.dequeueReusableCell(withIdentifier: identifier) as? AlbumCell
+		if albumCell == nil {
+			albumCell = AlbumCell(style: .subtitle, reuseIdentifier: identifier)
+		}
+		if let album = self.albums?[indexPath.row] {
 			albumCell.configure(with: album)
 		}
-		return cell
+		return albumCell
 	}
 }

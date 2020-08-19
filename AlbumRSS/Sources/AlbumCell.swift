@@ -28,7 +28,10 @@ class AlbumCell: UITableViewCell {
 			}
 		}
 		if let textLabel = self.textLabel {
-			textLabel.text = "\(album.artist) - \(album.name)"
+			textLabel.text = album.name
+		}
+		if let detailTextLabel = self.detailTextLabel {
+			detailTextLabel.text = album.artist
 		}
 	}
 
@@ -37,5 +40,6 @@ class AlbumCell: UITableViewCell {
 		self.cancellable?.cancel()
 		self.imageView?.image = nil
 		self.textLabel?.text = nil
+		self.detailTextLabel?.text = nil
 	}
 }
