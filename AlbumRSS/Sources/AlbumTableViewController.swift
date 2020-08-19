@@ -53,7 +53,7 @@ extension AlbumTableViewController {
 
 				return data
 			})
-			.catch { (error) -> Just<Data?> in
+			.catch { [unowned self] (error) -> Just<Data?> in
 				DispatchQueue.main.async {
 					self.present(error: error) { (retry) in
 						if retry {
@@ -69,7 +69,7 @@ extension AlbumTableViewController {
 			.decode(type: AlbumRSS.self, decoder: decoder)
 			.compactMap { (albumRSS) -> AlbumRSS? in albumRSS }
 			.receive(on: RunLoop.main)
-			.catch { (error) -> Just<AlbumRSS?> in
+			.catch { [unowned self] (error) -> Just<AlbumRSS?> in
 				self.present(error: error) { (retry) in
 					if retry {
 						self.reloadAlbums(self)
@@ -80,7 +80,7 @@ extension AlbumTableViewController {
 				return Just(nil)
 			}
 			.compactMap { (albumRSS) -> AlbumRSS? in albumRSS }
-			.sink { (albumRSS) in
+			.sink { [unowned self] (albumRSS) in
 				let feed = albumRSS.feed
 				self.title = feed.title
 				self.albums = feed.albums

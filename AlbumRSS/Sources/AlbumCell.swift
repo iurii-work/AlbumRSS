@@ -21,7 +21,7 @@ class AlbumCell: UITableViewCell {
 			} else {
 				self.cancellable = ArtworkCache.shared.artworkPublisher(for: artworkURL)
 					.receive(on: RunLoop.main)
-					.sink { (artwork) in
+					.sink { [unowned self] (artwork) in
 						imageView.image = artwork
 						self.setNeedsLayout()
 					}
