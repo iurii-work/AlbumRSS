@@ -13,10 +13,19 @@ class AlbumTableViewController: UITableViewController {
 	private var albums: [Album]?
 	private var cancellable: AnyCancellable?
 
+	override func loadView() {
+		super.loadView()
+
+		let refreshControl = UIRefreshControl()
+		refreshControl.addTarget(self, action: #selector(reloadAlbums(_:)), for: .valueChanged)
+		self.refreshControl = refreshControl
+	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		self.reloadAlbums()
+		self.refreshControl?.beginRefreshing()
+		self.reloadAlbums(self)
 	}
 }
 
@@ -27,7 +36,7 @@ extension AlbumTableViewController {
 		self.present(alertController, animated: true, completion: nil)
 	}
 
-	func reloadAlbums() {
+	@IBAction private func reloadAlbums(_ sender: Any) {
 		let albumRSSURL = URL(string: "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json")!
 		let decoder = JSONDecoder()
 		decoder.dateDecodingStrategy = .formatted(Album.dateFormatter)
@@ -44,7 +53,7 @@ extension AlbumTableViewController {
 				return data
 			})
 			.catch { (error) -> Just<Data?> in
-				DispatchQueue.main.async { self.present(error: error) { self.reloadAlbums() } }
+				DispatchQueue.main.async { self.present(error: error) { self.reloadAlbums(self) } }
 				return Just(nil)
 			}
 			.compactMap { (data) -> Data? in data }
@@ -52,7 +61,7 @@ extension AlbumTableViewController {
 			.compactMap { (albumRSS) -> AlbumRSS? in albumRSS }
 			.receive(on: RunLoop.main)
 			.catch { (error) -> Just<AlbumRSS?> in
-				self.present(error: error) { self.reloadAlbums() }
+				self.present(error: error) { self.reloadAlbums(self) }
 				return Just(nil)
 			}
 			.compactMap { (albumRSS) -> AlbumRSS? in albumRSS }
@@ -61,6 +70,7 @@ extension AlbumTableViewController {
 				self.title = feed.title
 				self.albums = feed.albums
 				self.tableView.reloadData()
+				self.refreshControl?.endRefreshing()
 			}
 	}
 }
