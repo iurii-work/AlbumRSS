@@ -16,7 +16,7 @@ struct Album: Decodable {
 	let genres: [Genre]
 	let location: URL
 	let name: String
-	let releaseDate: Date
+	let releaseDate: Date?
 
 	enum CodingKeys: String, CodingKey {
 		case artist = "artistName"

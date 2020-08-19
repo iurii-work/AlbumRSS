@@ -106,11 +106,15 @@ class AlbumViewController: UIViewController {
 		self.albumLabel.text = album.name.uppercased()
 		self.artistLabel.text = album.artist
 		self.genreLabel.text = album.genres.map({ $0.name }).joined(separator: "/")
-		self.releaseDateLabel.text = Album.dateFormatter.string(from: album.releaseDate)
 		if let copyright = album.copyright {
 			self.copyrightLabel.text = copyright
 		} else {
 			self.copyrightLabel.isHidden = true
+		}
+		if let releaseDate = album.releaseDate {
+			self.releaseDateLabel.text = Album.dateFormatter.string(from: releaseDate)
+		} else {
+			self.releaseDateLabel.isHidden = true
 		}
 	}
 
