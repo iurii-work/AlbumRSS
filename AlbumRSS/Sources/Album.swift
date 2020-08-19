@@ -12,7 +12,7 @@ import Foundation
 struct Album: Decodable {
 	let artist: String
 	let artworkURL: URL
-	let copyright: String
+	let copyright: String?
 	let genres: [Genre]
 	let location: URL
 	let name: String
