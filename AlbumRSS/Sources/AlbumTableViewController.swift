@@ -17,7 +17,12 @@ class AlbumTableViewController: UITableViewController {
 		super.viewDidLoad()
 
 		self.tableView.register(AlbumCell.self, forCellReuseIdentifier: String(describing: AlbumCell.self))
+		self.reloadAlbums()
+	}
+}
 
+extension AlbumTableViewController {
+	func reloadAlbums() {
 		let albumRSSURL = URL(string: "https://rss.itunes.apple.com/api/v1/us/apple-music/top-albums/all/100/explicit.json")!
 		let decoder = JSONDecoder()
 		decoder.dateDecodingStrategy = .formatted(Album.dateFormatter)
@@ -47,7 +52,9 @@ class AlbumTableViewController: UITableViewController {
 				self.tableView.reloadData()
 			}
 	}
+}
 
+extension AlbumTableViewController {
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if let album = self.albums?[indexPath.row] {
 			let albumViewController = AlbumViewController(album: album)
