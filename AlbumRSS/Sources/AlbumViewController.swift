@@ -101,6 +101,7 @@ class AlbumViewController: UIViewController {
 			artworkView.image = artwork
 		} else {
 			self.cancellable = ArtworkCache.shared.artworkPublisher(for: artworkURL)
+				.receive(on: RunLoop.main)
 				.assign(to: \UIImageView.image, on: artworkView)
 		}
 		self.albumLabel.text = album.name.uppercased()
